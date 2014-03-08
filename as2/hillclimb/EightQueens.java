@@ -56,7 +56,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 			if(state[i]==row+difference || state[i]==row-difference)
 				total++;
 		}
-		return total-1;//sub 1 for self counting
+		return total;//sub 1 for self counting
 	}
 
 	private int checkRow(int column, int row){
@@ -81,6 +81,8 @@ public class EightQueens implements Problem<EightQueens>, State{
 
 	@Override
 	public EightQueens highestValueSuccessor() {
+		//TODO rewrite to actually generate successors?
+		//and comment this because there be no understanding
 		EightQueens successor = this;
 		EightQueens newState = new EightQueens();
 		newState.state = state;
