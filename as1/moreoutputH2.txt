@@ -1,0 +1,90 @@
+Which heuristic would you like to use? (1:H1 2:H2
+What would you like to solve
+1: One problem with true randomness
+2: 120 problems with increasing depth up to 24
+WARNING, A PROBLEM MAY TAKE VERY LONG TO SOLVE USING TRUE RANDOMNESS
+|0|3|2|
+|4|1|5|
+|6|7|8|
+
+
+Depth: 4
+Nodes Frontier: 9
+Nodes Explored: 6
+|0|3|5|
+|4|2|1|
+|6|7|8|
+
+
+Depth: 8
+Nodes Frontier: 30
+Nodes Explored: 21
+|0|3|5|
+|4|7|1|
+|2|6|8|
+
+
+Depth: 14
+Nodes Frontier: 261
+Nodes Explored: 244
+|0|3|5|
+|4|7|1|
+|2|6|8|
+
+
+Depth: 14
+Nodes Frontier: 261
+Nodes Explored: 244
+|0|4|5|
+|7|3|1|
+|2|6|8|
+
+
+Depth: 16
+Nodes Frontier: 540
+Nodes Explored: 554
+|0|4|1|
+|7|5|3|
+|2|6|8|
+
+
+Depth: 22
+Nodes Frontier: 7492
+Nodes Explored: 8036
+|0|4|1|
+|7|6|3|
+|5|2|8|
+
+
+Depth: 24
+Nodes Frontier: 15895
+Nodes Explored: 17983
+|0|4|1|
+|7|6|3|
+|5|2|8|
+
+
+Depth: 24
+Nodes Frontier: 15895
+Nodes Explored: 17983
+|0|7|1|
+|6|4|3|
+|5|2|8|
+
+
+Depth: 24
+Nodes Frontier: 16123
+Nodes Explored: 18079
+|0|7|3|
+|6|1|4|
+|5|2|8|
+
+
+Depth: 24
+Nodes Frontier: 15958
+Nodes Explored: 17768
+|0|7|3|
+|6|2|4|
+|1|5|8|
+
+

@@ -1,0 +1,18 @@
+README
+
+To run this program launch the driver and follow the displayed instructions. 
+The user will first be asked to choose a heuristic function to solve the problems. Valid input is either 1 or 2.
+After this the user can choose to generate 120 semi-random problems using a shuffle algorithim, or to generate one true random problem. This however may take very long to solve.
+
+For every problem being solved there will be this output:
+
+|x|x|x|		Current puzzle problem being solved
+|x|x|x|
+|x|x|x|		After a solution is found the information
+			below will be displayed
+
+Depth: ---				<-- depth of problem solution
+Nodes Frontier: ----	<-- number of nodes in the frontier*
+Nodes Explored: ----	<-- number of nodes in the explored*
+
+*upon finding solution

@@ -1,0 +1,161 @@
+Which heuristic would you like to use? (1:H1 2:H2
+|0|4|2|
+|1|3|5|
+|6|7|8|
+
+
+Depth: 4
+Nodes Frontier: 8
+Nodes Explored: 5
+|4|3|2|
+|1|0|5|
+|6|7|8|
+
+
+Depth: 6
+Nodes Frontier: 17
+Nodes Explored: 14
+|4|3|2|
+|7|0|5|
+|1|6|8|
+
+
+Depth: 10
+Nodes Frontier: 54
+Nodes Explored: 55
+|4|3|2|
+|7|0|5|
+|1|6|8|
+
+
+Depth: 10
+Nodes Frontier: 54
+Nodes Explored: 55
+|4|3|2|
+|7|5|8|
+|1|6|0|
+
+
+Depth: 12
+Nodes Frontier: 92
+Nodes Explored: 88
+|4|3|2|
+|5|0|8|
+|7|1|6|
+
+
+Depth: 16
+Nodes Frontier: 680
+Nodes Explored: 684
+|4|2|0|
+|5|3|8|
+|7|1|6|
+
+
+Depth: 18
+Nodes Frontier: 1263
+Nodes Explored: 1262
+|4|2|8|
+|5|0|3|
+|7|1|6|
+
+
+Depth: 20
+Nodes Frontier: 3757
+Nodes Explored: 3849
+|4|2|8|
+|5|0|1|
+|7|6|3|
+
+
+Depth: 22
+Nodes Frontier: 9230
+Nodes Explored: 9856
+|4|2|8|
+|5|0|1|
+|7|6|3|
+
+
+Depth: 22
+Nodes Frontier: 9230
+Nodes Explored: 9856
+|0|2|8|
+|4|6|1|
+|5|7|3|
+
+
+Depth: 20
+Nodes Frontier: 3118
+Nodes Explored: 3051
+|4|2|8|
+|6|0|1|
+|5|7|3|
+
+
+Depth: 18
+Nodes Frontier: 1587
+Nodes Explored: 1568
+|4|2|0|
+|6|1|8|
+|5|7|3|
+
+
+Depth: 18
+Nodes Frontier: 1325
+Nodes Explored: 1322
+|6|4|2|
+|5|1|8|
+|0|7|3|
+
+
+Depth: 18
+Nodes Frontier: 1325
+Nodes Explored: 1361
+|6|4|2|
+|5|0|8|
+|7|1|3|
+
+
+Depth: 18
+Nodes Frontier: 1806
+Nodes Explored: 1791
+|6|4|2|
+|5|0|8|
+|7|1|3|
+
+
+Depth: 18
+Nodes Frontier: 1806
+Nodes Explored: 1791
+|4|2|0|
+|6|5|8|
+|7|1|3|
+
+
+Depth: 20
+Nodes Frontier: 3265
+Nodes Explored: 3343
+|4|2|0|
+|6|5|8|
+|7|1|3|
+
+
+Depth: 20
+Nodes Frontier: 3265
+Nodes Explored: 3343
+|6|4|2|
+|7|5|8|
+|0|1|3|
+
+
+Depth: 18
+Nodes Frontier: 1274
+Nodes Explored: 1310
+|6|4|2|
+|7|0|8|
+|1|5|3|
+
+
+Depth: 18
+Nodes Frontier: 1590
+Nodes Explored: 1594
