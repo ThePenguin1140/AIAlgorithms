@@ -9,7 +9,7 @@ import problem.State;
 public class EightQueens implements Problem<EightQueens>, State{
 	@SuppressWarnings("unused")
 	private enum Actions{
-		// move queen in column a to any space in column a
+		// move queen in column a http://137.149.157.7:8950/to any space in column a
 		//left blank and highestValueSuccessor is implemented instead
 	}
 	public EightQueens initialState = null;
@@ -56,7 +56,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 			if(state[i]==row+difference || state[i]==row-difference)
 				total++;
 		}
-		return total;//sub 1 for self counting
+		return total;
 	}
 
 	private int checkRow(int column, int row){
@@ -65,7 +65,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 			if(state[i]==row)
 				total ++;
 		}
-		return total-1;//subtract 1 for self counting
+		return total;
 	}
 
 	@Override
