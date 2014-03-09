@@ -14,7 +14,11 @@ public class EightQueens implements Problem<EightQueens>, State{
 	}
 	public EightQueens initialState = null;
 	public Integer[] state = new Integer[8];
-
+  
+   // TODO redo problem generation
+   // Redo this to make problem generation more random by allowing 
+   // queens to be in the same row
+   // by shuffeling this is being prevented 
 	public EightQueens(){
 		ArrayList<Integer> tmp = new ArrayList<Integer>(); // array used for random initialization
 		for(int i=0; i<8; i++){
