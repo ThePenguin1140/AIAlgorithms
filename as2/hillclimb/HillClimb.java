@@ -9,7 +9,7 @@ public class HillClimb {
 		Node<T> current = new Node<T>(initialState);
 		do{
 			Node<T> neighbor = highestValueSuccessor(current);
-			if(neighbor.value <= current.value)
+			if(neighbor.value < current.value)
 				return current.state;
 			current = neighbor;
 		}while(true);
