@@ -101,7 +101,8 @@ public class EightQueens implements Problem<EightQueens>, State{
       // add sideways counter
 		int sideways = 200;
       // for every queen on the board
-		for(int i: state){
+		//for(int i: state){
+      for(int i=0; i<state.length; i++){
          //reset state
          newState.state = state;
          // move it to any row in it's column
