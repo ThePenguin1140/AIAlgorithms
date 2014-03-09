@@ -62,7 +62,8 @@ public class EightQueens implements Problem<EightQueens>, State{
 		}
       //may have to decrement total in this and checkRow 
       //to account for self counting
-		return total;
+      // rare moment - I was right
+		return total-1;
 	}
 
 	private int checkRow(int column, int row){
@@ -71,7 +72,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 			if(state[i]==row)
 				total ++;
 		}
-		return total;
+		return total-1;
 	}
 
 	@Override
