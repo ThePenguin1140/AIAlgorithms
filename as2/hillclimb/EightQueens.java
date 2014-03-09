@@ -113,10 +113,10 @@ public class EightQueens implements Problem<EightQueens>, State{
             // check if sideways moves are still allowed
             // if they are then make the current node the new one
             // and decrement the sideways counter
-				else if(current.value()==newState.value() && sideways > 0){
-					current = newState;
-					sideways--;
-				}
+				//else if(current.value()==newState.value() && sideways > 0){
+					//current = newState;
+				//	sideways--;
+				//}
 			}
 		}
 		return current;
