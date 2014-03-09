@@ -52,7 +52,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 		int total = 0;
 		total += checkRow(column, row);
 		total += checkDiagonal(column, row);
-		return total;
+		return total/2;
 	}
 	
 	private int checkDiagonal(int column, int row) {
@@ -91,6 +91,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 	@Override
 	public EightQueens highestValueSuccessor() {
 		//TODO rewrite to actually generate successors?
+      //TODO remove one of the copies and replace it with 'this'
 		//and comment this because there be no understanding
 
 		EightQueens current = new EightQueens(); 
@@ -110,7 +111,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 				newState.state[i] = row;
             // if the value of the current state then 
             // make the new state the current
-				if(current.value()<newState.value())
+				if(current.value()>newState.value())
 					current = newState;
             // otherwise if they are equal (palteu or shoulder)
             // check if sideways moves are still allowed
