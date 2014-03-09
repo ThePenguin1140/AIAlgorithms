@@ -89,7 +89,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 	}
 
 	@Override
-	public EightQueens highestValueSuccessor() {}
+	public EightQueens highestValueSuccessor() {
 		//TODO rewrite to actually generate successors?
 		//and comment this because there be no understanding
 
