@@ -18,7 +18,7 @@ public class SimulatedAnnealing{
 			if(temp==0)
 				return current.state;
 			Node<T> neighbor = randomSuccessor(current);
-			int deltaE = neighbor.value - current.value;
+			int deltaE = Math.abs(neighbor.value - current.value);
 			if(deltaE > 0)
 				current = neighbor;
 			else if(probablity<=Math.pow(Math.E, deltaE/temp))
