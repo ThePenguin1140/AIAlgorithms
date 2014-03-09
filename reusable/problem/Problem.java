@@ -9,5 +9,7 @@ public interface Problem<T extends State> {
 	
 	public T highestValueSuccessor();
 	
+	public T randomSuccessor();
+	
 	public Class<? extends T> getGeneric();
 }
