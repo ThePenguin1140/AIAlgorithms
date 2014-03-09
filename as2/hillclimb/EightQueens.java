@@ -28,6 +28,8 @@ public class EightQueens implements Problem<EightQueens>, State{
 		for(Integer i: tmp){
 			state[tmp.indexOf(i)]=i;
 		}
+      // TODO static state construction
+      //add the generation of a static state for debugging  
 		initialState = this;
 	}
 
