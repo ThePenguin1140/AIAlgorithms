@@ -12,7 +12,7 @@ public class HillClimb {
 			Node<T> neighbor = highestValueSuccessor(current);
 			if(neighbor.value < current.value)
 				return current.state;
-         else if(neightbor.value == current.value && sideways == 0){
+         else if(neighbor.value == current.value && sideways == 0){
             return current.state;
          }
          if(neighbor.value == current.value)
