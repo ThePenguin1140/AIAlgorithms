@@ -52,10 +52,12 @@ public class EightQueens implements Problem<EightQueens>, State{
 	private int checkDiagonal(int column, int row) {
 		int total = 0;
 		for(int i=0; i<state.length; i++){
-			int difference = Math.abs(column-i)+1;
+			int difference = Math.abs(column-i);
 			if(state[i]==row+difference || state[i]==row-difference)
 				total++;
 		}
+      //may have to decrement total in this and checkRow 
+      //to account for self counting
 		return total;
 	}
 
