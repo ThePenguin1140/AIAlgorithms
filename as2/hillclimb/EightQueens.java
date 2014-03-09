@@ -1,7 +1,6 @@
 package hillclimb;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
 
 import problem.Problem;
@@ -159,5 +158,16 @@ public class EightQueens implements Problem<EightQueens>, State{
 	public Class<? extends EightQueens> getGeneric() {
 		// TODO Auto-generated method stub
 		return this.getClass();
+	}
+
+	@Override
+	public EightQueens randomSuccessor() {
+		EightQueens newState = new EightQueens();
+		newState.state = copyState(state);
+		Random rand = new Random();
+		int column = rand.nextInt(8);
+		int row = rand.nextInt(8);
+		newState.state[column] = Integer.valueOf(row);
+		return newState;
 	}
 }
