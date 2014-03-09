@@ -98,14 +98,16 @@ public class EightQueens implements Problem<EightQueens>, State{
       // makes temporary object that can be edited
 		EightQueens newState = new EightQueens();
       // makes states of objects identical
-		newState.state = current.state = state;
+      for(int i=0; i<state.length; i++)
+         newState.state[i]=current.state[i]=state[i];
       // add sideways counter
 		int sideways = 200;
       // for every queen on the board
 		//for(int i: state){
       for(int i=0; i<state.length; i++){
          //reset state
-         newState.state = state;
+         for(int x=0; x<state.length; x++)
+            newState.state[x] = state[x];
          // move it to any row in it's column
 			for(int row=0; row<8; row++){
 				newState.state[i] = row;
