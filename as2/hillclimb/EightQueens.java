@@ -2,6 +2,7 @@ package hillclimb;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 import problem.Problem;
 import problem.State;
@@ -20,24 +21,21 @@ public class EightQueens implements Problem<EightQueens>, State{
    // queens to be in the same row
    // by shuffeling this is being prevented 
 	public EightQueens(){
+		Random random = new Random();
 		ArrayList<Integer> tmp = new ArrayList<Integer>(); // array used for random initialization
-		for(int i=0; i<8; i++){
-			tmp.add(Integer.valueOf(i));
-		}
-		Collections.shuffle(tmp);
-		for(Integer i: tmp){
-			state[tmp.indexOf(i)]=i;
+		for(int i=0; i<state.length; i++){
+			state[i]=Integer.valueOf(random.nextInt(8));
 		}
       // TODO static state construction
       //add the generation of a static state for debugging  
-		state[0] = Integer.valueOf(6);
-		state[1] = Integer.valueOf(0);
-		state[2] = Integer.valueOf(2);
-		state[3] = Integer.valueOf(6);
-		state[4] = Integer.valueOf(3);
-		state[5] = Integer.valueOf(4);
-		state[6] = Integer.valueOf(7);
-		state[7] = Integer.valueOf(1);
+//		state[0] = Integer.valueOf(6);
+//		state[1] = Integer.valueOf(6);
+//		state[2] = Integer.valueOf(6);
+//		state[3] = Integer.valueOf(6);
+//		state[4] = Integer.valueOf(6);
+//		state[5] = Integer.valueOf(6);
+//		state[6] = Integer.valueOf(6);
+//		state[7] = Integer.valueOf(6);
 		initialState = this;
 	}
 
@@ -60,7 +58,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 		int total = 0;
 		total += checkRow(column, row);
 		total += checkDiagonal(column, row);
-		return total/2;
+		return total;
 	}
 	
 	private int checkDiagonal(int column, int row) {
@@ -108,22 +106,19 @@ public class EightQueens implements Problem<EightQueens>, State{
       // makes states of objects identical
       for(int i=0; i<state.length; i++)
          newState.state[i]=current.state[i]=state[i];
-      // add sideways counter
-		int sideways = 200;
       // for every queen on the board
 		//for(int i: state){
       for(int i=0; i<state.length; i++){
          //reset state
-         for(int x=0; x<state.length; x++)
-            newState.state[x] = state[x];
+         newState.state = copyState(state);
          // move it to any row in it's column
 			for(int row=0; row<8; row++){
 				newState.state[i] = row;
             // if the value of the current state then 
             // make the new state the current
 				if(current.value()>newState.value())
-					current = newState;
-            // otherwise if they are equal (palteu or shoulder)
+					current.state = copyState(newState.state);
+            // otherwise if they are equal (plateau or shoulder)
             // check if sideways moves are still allowed
             // if they are then make the current node the new one
             // and decrement the sideways counter
@@ -134,6 +129,14 @@ public class EightQueens implements Problem<EightQueens>, State{
 			}
 		}
 		return current;
+	}
+	
+	private Integer[] copyState(Integer[] parent){
+		Integer[] tmp = new Integer[8];
+		for(int i=0; i<parent.length; i++){
+			tmp[i]=parent[i];
+		}
+		return tmp;
 	}
 	
 	//TODO write to string for 8 queens state
