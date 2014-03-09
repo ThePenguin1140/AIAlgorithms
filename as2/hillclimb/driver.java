@@ -9,10 +9,10 @@ public class driver {
 		for(int i=0; i<amount; i++){
 //      while(true){
 			EightQueens problem = new EightQueens();
-        // System.out.println(problem);
-			EightQueens solution = HillClimb.solve(problem, problem.initialState);
-//         System.out.println(solution);
-//         System.out.println(solution.value());
+        // 	System.out.println(problem);
+			EightQueens solution = RandomResartHillClimbing.solve(problem, problem.initialState);
+//         	System.out.println(solution);
+//         	System.out.println(solution.value());
 			if(solution.value()==0){
 //				System.out.println(solution);
 //				System.out.println(solution.value());
