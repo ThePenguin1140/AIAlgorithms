@@ -91,24 +91,35 @@ public class EightQueens implements Problem<EightQueens>, State{
 	@Override
 	public EightQueens highestValueSuccessor() {}
 		//TODO rewrite to actually generate successors?
-      //TODO comment highest value successor
 		//and comment this because there be no understanding
-		EightQueens successor = this;
+
+		EightQueens current = new EightQueens(); 
+      // makes temporary object that can be edited
 		EightQueens newState = new EightQueens();
-		newState.state = state;
+      // makes states of objects identical
+		newState.state = current.state = state;
+      // add sideways counter
 		int sideways = 200;
+      // for every queen on the board
 		for(int i: state){
+         // move it to any row in it's column
 			for(int row=0; row<8; row++){
 				newState.state[i] = row;
-				if(successor.value()<newState.value())
-					successor = newState;
-				else if(successor.value()==newState.value() && sideways > 0){
-					successor = newState;
+            // if the value of the current state then 
+            // make the new state the current
+				if(current.value()<newState.value())
+					current = newState;
+            // otherwise if they are equal (palteu or shoulder)
+            // check if sideways moves are still allowed
+            // if they are then make the current node the new one
+            // and decrement the sideways counter
+				else if(current.value()==newState.value() && sideways > 0){
+					current = newState;
 					sideways--;
 				}
 			}
 		}
-		return successor;
+		return current;
 	}
 	
 	//TODO write to string for 8 queens state
