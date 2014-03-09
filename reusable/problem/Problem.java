@@ -8,4 +8,6 @@ public interface Problem<T extends State> {
 	public T Result(Actions Action);
 	
 	public T highestValueSuccessor();
+	
+	public Class<? extends T> getGeneric();
 }
