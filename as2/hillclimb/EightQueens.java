@@ -154,4 +154,10 @@ public class EightQueens implements Problem<EightQueens>, State{
 		}
 		return output;
 	}
+
+	@Override
+	public Class<? extends EightQueens> getGeneric() {
+		// TODO Auto-generated method stub
+		return this.getClass();
+	}
 }
