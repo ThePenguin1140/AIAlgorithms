@@ -30,6 +30,14 @@ public class EightQueens implements Problem<EightQueens>, State{
 		}
       // TODO static state construction
       //add the generation of a static state for debugging  
+		state[0] = Integer.valueOf(6);
+		state[1] = Integer.valueOf(0);
+		state[2] = Integer.valueOf(2);
+		state[3] = Integer.valueOf(6);
+		state[4] = Integer.valueOf(3);
+		state[5] = Integer.valueOf(4);
+		state[6] = Integer.valueOf(7);
+		state[7] = Integer.valueOf(1);
 		initialState = this;
 	}
 
