@@ -1,5 +1,5 @@
 package problem;
 
 public interface Schedule {
-	public int getTemp(int time);
+	public double getTemp(int time);
 }
