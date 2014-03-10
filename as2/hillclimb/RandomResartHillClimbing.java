@@ -4,6 +4,9 @@ import problem.Node;
 import problem.Problem;
 import problem.State;
 
+/*
+ * Hill climbing algorithm with random restart implemented
+ */
 public class RandomResartHillClimbing extends HillClimb {
 	public static <T extends State & Problem<? extends T>> T solve(Problem<T> problem, T initialState){
 		Node<T> current = new Node<T>(initialState);

@@ -6,36 +6,33 @@ import java.util.Random;
 import problem.Problem;
 import problem.State;
 
+/*
+ *  The problem that is to be solved by the algorithms,
+ *  implements the required interfaces.
+ *  Is solved when 8 queens are placed on a board without any attacking pairs
+ *  the value of this problem is the number of attacking pairs.
+ */
+
+
 public class EightQueens implements Problem<EightQueens>, State{
 	@SuppressWarnings("unused")
 	private enum Actions{
-		// move queen in column a http://137.149.157.7:8950/to any space in column a
+		// move queen in column a any space in column a
 		//left blank and highestValueSuccessor is implemented instead
 	}
 	public EightQueens initialState = null;
 	public Integer[] state = new Integer[8];
 	public int totalNodes = 0;
   
-   // TODO redo problem generation
-   // Redo this to make problem generation more random by allowing 
-   // queens to be in the same row
-   // by shuffeling this is being prevented 
+   /*
+    * Instantiates a random 8 queens problem
+    */
 	public EightQueens(){
 		Random random = new Random();
 		ArrayList<Integer> tmp = new ArrayList<Integer>(); // array used for random initialization
 		for(int i=0; i<state.length; i++){
 			state[i]=Integer.valueOf(random.nextInt(8));
 		}
-      // TODO static state construction
-      //add the generation of a static state for debugging  
-//		state[0] = Integer.valueOf(6);
-//		state[1] = Integer.valueOf(6);
-//		state[2] = Integer.valueOf(6);
-//		state[3] = Integer.valueOf(6);
-//		state[4] = Integer.valueOf(6);
-//		state[5] = Integer.valueOf(6);
-//		state[6] = Integer.valueOf(6);
-//		state[7] = Integer.valueOf(6);
 		initialState = this;
 	}
 
@@ -43,8 +40,6 @@ public class EightQueens implements Problem<EightQueens>, State{
 	/*
 	 * (non-Javadoc)
 	 * @see problem.State#value()
-	 * Calculates the heuristic value of the problem,
-	 * used to determine the slope of the successor
 	 */
 	public int value() {
 		int total = 0;
@@ -54,6 +49,11 @@ public class EightQueens implements Problem<EightQueens>, State{
 		return total;
 	}
 	
+	/*
+	 * checks the whether the indicated queen attacks
+	 * any other queen,
+	 * takes the column and row of a queen on the board
+	 */
 	private int checkAttacking(int column, int row){
 		int total = 0;
 		total += checkRow(column, row);
@@ -61,10 +61,16 @@ public class EightQueens implements Problem<EightQueens>, State{
 		return total;
 	}
 	
+	/*
+	 * checks the whether the indicated queen attacks
+	 * any other queen diagonally
+	 */
 	private int checkDiagonal(int column, int row) {
 		int total = 0;
 		for(int i=0; i<state.length; i++){
 			int difference = Math.abs(column-i);
+			// how far off horizontally would a queen have to be to be
+			// diagonal in proportion to the parameter queen
 			if(state[i]==row+difference || state[i]==row-difference)
 				total++;
 		}
@@ -74,6 +80,10 @@ public class EightQueens implements Problem<EightQueens>, State{
 		return total-1;
 	}
 
+	/*
+	 * checks the whether the indicated queen attacks
+	 * any other queen horizontally
+	 */
 	private int checkRow(int column, int row){
 		int total = 0;
 		for(int i=0; i<state.length; i++){
@@ -95,11 +105,11 @@ public class EightQueens implements Problem<EightQueens>, State{
 	}
 
 	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see problem.Problem#highestValueSuccessor()
+	 */
 	public EightQueens highestValueSuccessor() {
-		//TODO rewrite to actually generate successors?
-      //TODO remove one of the copies and replace it with 'this'
-		//and comment this because there be no understanding
-
 		EightQueens current = new EightQueens(); 
       // makes temporary object that can be edited
 		EightQueens newState = new EightQueens();
@@ -131,6 +141,9 @@ public class EightQueens implements Problem<EightQueens>, State{
 		return current;
 	}
 	
+	/*
+	 * copies the state returning a new state object
+	 */
 	private Integer[] copyState(Integer[] parent){
 		Integer[] tmp = new Integer[8];
 		for(int i=0; i<parent.length; i++){
@@ -139,7 +152,10 @@ public class EightQueens implements Problem<EightQueens>, State{
 		return tmp;
 	}
 	
-	//TODO write to string for 8 queens state
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString(){
 		String output = "";
 		for(int row=0; row<state.length; row++){
@@ -156,12 +172,20 @@ public class EightQueens implements Problem<EightQueens>, State{
 	}
 
 	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see problem.Problem#getGeneric()
+	 */
 	public Class<? extends EightQueens> getGeneric() {
 		// TODO Auto-generated method stub
 		return this.getClass();
 	}
 
 	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see problem.Problem#randomSuccessor()
+	 */
 	public EightQueens randomSuccessor() {
 		EightQueens newState = new EightQueens();
 		newState.state = copyState(state);
@@ -173,6 +197,10 @@ public class EightQueens implements Problem<EightQueens>, State{
 	}
 
 	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see problem.State#setTotalNodes(int)
+	 */
 	public void setTotalNodes(int total) {
 		// TODO Auto-generated method stub
 		totalNodes=total;
