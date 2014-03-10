@@ -12,17 +12,24 @@ public class SimulatedAnnealing{
 		Node<T> current = new Node<T>(initialState);
 		Random random = new Random();
 		int time = 1;
+		int counter = 0;
 		do{
+			counter++;
 			float probablity = random.nextFloat();
-			int temp = schedule.getTemp(time);
-			if(temp==0)
+			double temp = schedule.getTemp(time);
+			if(temp==0){
+				current.state.setTotalNodes(counter);
 				return current.state;
+			}
 			Node<T> neighbor = randomSuccessor(current);
-			int deltaE = Math.abs(neighbor.value - current.value);
+			int deltaE = current.value - neighbor.value;//reverse for general algorithm
+			double exp = (double)deltaE/temp;
+			double acceptedProbability = Math.pow(Math.E, exp);
 			if(deltaE > 0)
 				current = neighbor;
-			else if(probablity<=Math.pow(Math.E, deltaE/temp))
+			else if(probablity<=acceptedProbability)
 				current = neighbor;
+			time++;
 		}while(true);
 	}
 	
