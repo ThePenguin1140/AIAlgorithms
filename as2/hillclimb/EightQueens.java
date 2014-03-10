@@ -14,6 +14,7 @@ public class EightQueens implements Problem<EightQueens>, State{
 	}
 	public EightQueens initialState = null;
 	public Integer[] state = new Integer[8];
+	public int totalNodes = 0;
   
    // TODO redo problem generation
    // Redo this to make problem generation more random by allowing 
@@ -169,5 +170,11 @@ public class EightQueens implements Problem<EightQueens>, State{
 		int row = rand.nextInt(8);
 		newState.state[column] = Integer.valueOf(row);
 		return newState;
+	}
+
+	@Override
+	public void setTotalNodes(int total) {
+		// TODO Auto-generated method stub
+		totalNodes=total;
 	}
 }
